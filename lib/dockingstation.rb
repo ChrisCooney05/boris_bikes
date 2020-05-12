@@ -6,11 +6,15 @@ class DockingStation
       fail 'No bike'
     else
       @bike
-    end  
+    end
   end
 
   def docking(bike)
-    @bike = bike
+    if @bike == nil
+      @bike = bike
+    else
+      fail 'Station full'
+    end
   end
 
 end
