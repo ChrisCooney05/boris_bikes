@@ -18,4 +18,7 @@ describe DockingStation do
     expect(DockingStation.new).to respond_to(:docking).with(1).argument
   end
 
+  it 'Throws an error if there is no bike in the dock' do
+    expect()
+
 end
