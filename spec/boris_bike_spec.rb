@@ -25,6 +25,12 @@ describe DockingStation do
   it "Throws an error if there is a bike already docked" do
     station = DockingStation.new
     station.docking('bike')
+    expect { station.docking('bike2') }.to_not raise_error('Station full')
+  end
+
+  it "Throws an error if there is a bike already docked" do
+    station = DockingStation.new
+    20.times { station.docking('bike') }
     expect { station.docking('bike2') }.to raise_error('Station full')
   end
 
